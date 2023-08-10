@@ -1,3 +1,4 @@
+
 # Use an official Node.js runtime as the base image
 FROM node:14 as build
 
@@ -27,3 +28,10 @@ EXPOSE 80
 
 # The default command to start Nginx
 CMD ["nginx", "-g", "daemon off;"]
+
+# Build the Docker image
+docker build -t my-react-app .
+
+# Run the Docker container
+docker run -p 80:80 my-react-app
+
